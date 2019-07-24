@@ -1,5 +1,6 @@
 package com.actitime.pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +12,7 @@ public class EnterTimeTrackerPage  extends BasePage
 	@FindBy(xpath="//a[.='Logout']")
 	private WebElement logoutBt;
 	
-	@FindBy(xpath="//div[@class='popup_menu_icon support_icon']")
+	@FindBy(xpath="//div[@class='menuTable']/div[3]/div[1]")
 	private WebElement help;
 	
 	@FindBy(xpath = "//a[.='About your actiTIME']")
@@ -29,7 +30,7 @@ public class EnterTimeTrackerPage  extends BasePage
 	
 	public void clickOnLogout()
 	{
-		logoutBt.click();
+		logoutBt.sendKeys(Keys.ENTER);
 	}
 	
 	public void clickOnHelp()
