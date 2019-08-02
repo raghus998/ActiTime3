@@ -5,7 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <build>
     <plugins>
- <!-- Another way to add Comlier Plugin -->
+ <!-- Another way to add Compiler Plugin -->
  <!--   <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.1</version>
