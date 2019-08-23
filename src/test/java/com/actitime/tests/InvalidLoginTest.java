@@ -14,7 +14,7 @@ public class InvalidLoginTest extends BaseTest
 	@Test(priority=2)
 	public void testInvalidLogin() throws InterruptedException
 	{
-		//updated class
+		//updated class new
 		String loginTittle = ExcelData.getData(file_path, "TC01",1,2);
 		String expectedEM = ExcelData.getData(file_path, "TC02", 1,2);
 		
