@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.actitime.tests.VerfiyVersionTest">
+      <class name="com.actitime.tests.InvalidLoginTest">
         <methods>
-          <include name="testVerifyVersion"/>
+          <include name="testInvalidLogin"/>
           <include name="postcondition"/>
           <include name="precondition"/>
         </methods>
-      </class> <!-- com.actitime.tests.VerfiyVersionTest -->
-      <class name="com.actitime.tests.VerifyBuildNoTest">
-        <methods>
-          <include name="postcondition"/>
-          <include name="testVerifyBuildNo"/>
-          <include name="precondition"/>
-        </methods>
-      </class> <!-- com.actitime.tests.VerifyBuildNoTest -->
+      </class> <!-- com.actitime.tests.InvalidLoginTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

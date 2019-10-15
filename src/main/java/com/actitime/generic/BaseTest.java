@@ -8,12 +8,15 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public abstract  class BaseTest implements AutoConstants {
 	public WebDriver driver;
 	static
 	{
-		System.setProperty(chrome_key,chrome_value);
-		System.setProperty(ie_key,ie_value);
+		//System.setProperty(chrome_key,chrome_value);
+		//System.setProperty(ie_key,ie_value);
+		WebDriverManager.chromedriver().setup();
 	}
 	@BeforeMethod
 	public void precondition()
