@@ -12,7 +12,8 @@ public class ValidLoginLogoutTest  extends BaseTest
 	@Test(priority=1)
 	public void testValidLoginLogout()
 	{
-	
+		logger = extent.createTest("ValidLoginLogoutTest is created");
+		logger.info("ValidLoginLogoutTest is started");
 		String loginTittle = ExcelData.getData(file_path,"TC01",1,2);
 		String un= ExcelData.getData(file_path,"TC01",1,0);
 		String pw = ExcelData.getData(file_path, "TC01",1,1);
@@ -41,5 +42,6 @@ public class ValidLoginLogoutTest  extends BaseTest
 		
 		//verify loginpage
 		lp.verifyPage(loginTittle);
+		
 	}
 }

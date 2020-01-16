@@ -14,6 +14,8 @@ public class InvalidLoginTest extends BaseTest
 	@Test(priority=2)
 	public void testInvalidLogin() throws InterruptedException
 	{
+		logger = extent.createTest("InvalidLoginTest is created");
+		logger.info("InvalidLoginTest is started");
 		//updated class new 1
 		String loginTittle = ExcelData.getData(file_path, "TC01",1,2);
 		String expectedEM = ExcelData.getData(file_path, "TC02", 1,2);

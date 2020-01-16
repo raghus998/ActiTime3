@@ -15,6 +15,8 @@ public class VerifyBuildNoTest extends BaseTest
 	@Test(priority=4)
 	public  void testVerifyBuildNo() throws InterruptedException
 	{
+		logger = extent.createTest("testVerifyBuildNo is created");
+		logger.info("testVerifyBuildNo is started");
 		String loginTittle = ExcelData.getData(file_path, "TC01",1, 2);		
 		String un = ExcelData.getData(file_path, "TC01", 1, 0);
 		String pw = ExcelData.getData(file_path, "TC01", 1, 1);

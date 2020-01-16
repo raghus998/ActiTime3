@@ -6,12 +6,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public abstract  class BaseTest implements AutoConstants {
 	public WebDriver driver;
+	public static ExtentHtmlReporter htmlreport ;
+	public static ExtentReports extent ;
+	public static ExtentTest logger;
+	
 	static
 	{
 		//System.setProperty(chrome_key,chrome_value);
@@ -37,6 +48,29 @@ public abstract  class BaseTest implements AutoConstants {
 			GenericUtils.getscreenshots(driver, name);
 		}
 		driver.close();
+	}
+	
+	@BeforeTest
+	public void startTest()
+	{
+		//crate object of  ExtentHtmlReporter
+		htmlreport = new ExtentHtmlReporter("./Reports/Reports.html");
+		htmlreport.config().setTheme(Theme.DARK);
+		htmlreport.config().setReportName("Test Report");
+		htmlreport.config().setDocumentTitle("AutoMation Test Report");
+		
+		//crate object of  ExtentReports
+		extent = new ExtentReports();
+		extent.attachReporter(htmlreport);
+		extent.setSystemInfo("OS","Win10");
+		extent.setSystemInfo("BrowserName", "Chrome");
+		extent.setSystemInfo("Host", "169.13.169.36");
+	}
+	
+
+	@AfterTest
+	public void stopTest() {
+		extent.flush();
 	}
 
 }

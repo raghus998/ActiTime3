@@ -12,6 +12,8 @@ public class VerfiyVersionTest extends BaseTest{
 	@Test(priority = 3)
 	public void testVerifyVersion()
 	{
+		logger = extent.createTest("VerfiyVersionTest is created");
+		logger.info("VerfiyVersionTest is started");
 		String loginTittle = ExcelData.getData(file_path, "TC01",1, 2);
 		String Eversion = ExcelData.getData(file_path, "TC03", 1, 0);
 		LoginPage lp = new LoginPage(driver);
@@ -28,5 +30,6 @@ public class VerfiyVersionTest extends BaseTest{
 		sa.assertEquals(AVersion, Eversion);
 		sa.assertAll();
 		Reporter.log("Version is matching :",true);
+		
 	}
 }
